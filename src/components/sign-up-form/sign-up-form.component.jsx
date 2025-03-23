@@ -6,7 +6,7 @@ import FormInput from "../form-input/form-input.component";
 
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 
-import './sign-up-form.styles.scss';
+import {SignUpContainer} from './sign-up-form.styles';
 import Button from "../button/button.component";
 
 
@@ -56,7 +56,7 @@ const SignUpForm = () => {
     }
 
     return (
-        <div className="sign-up-container">
+        <SignUpContainer>
             <h2>Don't have an account?</h2>
             <span>Sign up with your email and password</span>
             <form onSubmit={handleSubmit}>
@@ -65,21 +65,10 @@ const SignUpForm = () => {
                 <FormInput label="Email" type="email" name="email" required onChange={handleChange} value={email}/>
                 <FormInput label="Password" type="password" name="password" required onChange={handleChange} value={password} minLength={6}/>
                 <FormInput label="Confirm Password" type="password" name="confirmPassword" required onChange={handleChange} value={confirmPassword} minLength={6}/>
-                {/* <label>Display Name</label>
-                <input type="text" name="displayName" required onChange={handleChange} value={displayName}/> */}
 
-                {/* <label>Email</label>
-                <input type="email" name="email" required onChange={handleChange} value={email}/> */}
-
-                {/* <label>Password</label>
-                <input type="password" name="password" required onChange={handleChange} value={password} minLength={6}/> */}
-
-                {/* <label>Confirm Password</label>
-                <input type="password" name="confirmPassword" required onChange={handleChange} value={confirmPassword} minLength={6}/> */}
                 <Button type="submit" children="Sign Up"/>
-                {/* <button type="submit">Sign Up</button> */}
             </form>
-        </div>
+        </SignUpContainer>
     )
 }
 
